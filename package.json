@@ -1,0 +1,21 @@
+{
+  "name": "choochooserver",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-rate-limit": "^3.3.2",
+    "fuse.js": "^3.3.0",
+    "gtfs-realtime-bindings": "0.0.4",
+    "mta-gtfs": "^1.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
