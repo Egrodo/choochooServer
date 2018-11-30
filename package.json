@@ -11,7 +11,8 @@
     "express-rate-limit": "^3.3.2",
     "fuse.js": "^3.3.0",
     "gtfs-realtime-bindings": "0.0.4",
-    "mta-gtfs": "^1.1.0"
+    "mta-gtfs": "^1.1.0",
+    "protobufjs": "^6.8.8"
   },
   "scripts": {
     "start": "node index.js"
