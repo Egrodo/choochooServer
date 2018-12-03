@@ -1,9 +1,12 @@
 {
   "name": "choochooserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "private": true,
   "main": "index.js",
+  "engines": {
+    "node": "8.11.2"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "cors": "^2.8.5",
