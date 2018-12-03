@@ -13,6 +13,8 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
+const port = process.env.PORT || 8080;
+
 // MainLimiter limits requests to the API at 45 per 15 minutes or 4 per minute (3x the automated amount to account for refreshes)
 const mainLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -210,4 +212,4 @@ app.use((_, res) => {
   res.status(404).json({ error: "Route doesn't exist." });
 });
 
-app.listen(8080, () => console.log("Server running on port 8080."));
+app.listen(port, () => console.log("Server running on port " + port));
