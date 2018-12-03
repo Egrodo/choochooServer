@@ -202,7 +202,7 @@ app.get("/api/weather/:lat/:lon", async (req, res, next) => {
     res.json({ temperature, summary });
   } catch (err) {
     console.error(err);
-    res.json({ error: err });
+    res.status(503).json({ error: err });
   }
 });
 
