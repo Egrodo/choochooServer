@@ -48,7 +48,7 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
   }
 
   // A function to return all closest trains given a schedule.
-  const getTrains = (schedule, maxCount = 3) => {
+  const getTrains = (schedule, maxCount = 5) => {
     // Get the current (3 length) second count for comparison.
     let currTime = Date.now().toString();
     currTime = +currTime.substring(0, currTime.length - 3);
@@ -130,9 +130,11 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
       return;
     }
 
-    const { north, south } = getTrains(schedule, 3);
+    const { north, south } = getTrains(schedule, 4);
     res.json({ N: north, S: south });
   } catch (error) {
+    console.log(error);
+    // If we've erred here it's probably because of malformed MTA data. Retry here so that the FE doesn't spam us with requests.
     res.status(503).json({ error });
   }
 });
@@ -203,7 +205,7 @@ app.get("/api/weather/:lat/:lon", async (req, res, next) => {
     const { summary, temperature } = data.currently;
     res.json({ temperature, summary });
   } catch (err) {
-    console.error(err);
+    // TODO: Retry a few times here in case it's an issue with the data?
     res.status(503).json({ error: err });
   }
 });
