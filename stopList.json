@@ -3048,7 +3048,7 @@
     "parent_station": ""
   },
   {
-    "stop_id": ["G08"],
+    "stop_id": ["E08", "F08", "R08"],
     "stop_code": "",
     "stop_name": "Forest Hills - 71 Av",
     "stop_desc": "",

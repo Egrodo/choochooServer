@@ -48,12 +48,12 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
   }
 
   // A function to return all closest trains given a schedule.
-  const getTrains = (schedule, maxCount = 5) => {
+  const getTrains = (schedule, maxCount = 4, useStopId) => {
     // Get the current (3 length) second count for comparison.
     let currTime = Date.now().toString();
     currTime = +currTime.substring(0, currTime.length - 3);
 
-    const { N, S } = schedule[stopId];
+    const { N, S } = schedule[useStopId];
     const north = [];
     const south = [];
     let i = 0;
@@ -122,7 +122,13 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
   });
 
   try {
-    const { schedule } = await mta.schedule(stopId);
+    let useStopId;
+    if (stopId === "E08" || stopId === "F08" || stopId === "R08") {
+      // Custom exception because the Forest Hills stop data is malformed.
+      useStopId = "G08";
+    }
+
+    const { schedule } = await mta.schedule(useStopId);
     if (!schedule || !Object.keys(schedule).length) {
       res
         .status(400)
@@ -130,7 +136,7 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
       return;
     }
 
-    const { north, south } = getTrains(schedule, 4);
+    const { north, south } = getTrains(schedule, 4, useStopId);
     res.json({ N: north, S: south });
   } catch (error) {
     console.log(error);
@@ -207,6 +213,31 @@ app.get("/api/weather/:lat/:lon", async (req, res, next) => {
   } catch (err) {
     // TODO: Retry a few times here in case it's an issue with the data?
     res.status(503).json({ error: err });
+  }
+});
+
+app.get("/api/test", async (req, res, next) => {
+  // TODO: Convert the data to
+  // Occasionaly there stop_id's that don't match feed_ids.
+  const mta = new MTA({
+    key: process.env.MTA_KEY,
+    feed_id: 16
+  });
+
+  try {
+    const { schedule } = await mta.schedule("G08");
+    if (!schedule || !Object.keys(schedule).length) {
+      res
+        .status(400)
+        .json({ error: `No schedule found, try different station` });
+      return;
+    }
+
+    res.json(schedule);
+  } catch (error) {
+    console.log(error);
+    // If we've erred here it's probably because of malformed MTA data. Retry here so that the FE doesn't spam us with requests.
+    res.status(503).json({ error });
   }
 });
 
