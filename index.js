@@ -216,31 +216,6 @@ app.get("/api/weather/:lat/:lon", async (req, res, next) => {
   }
 });
 
-app.get("/api/test", async (req, res, next) => {
-  // TODO: Convert the data to
-  // Occasionaly there stop_id's that don't match feed_ids.
-  const mta = new MTA({
-    key: process.env.MTA_KEY,
-    feed_id: 16
-  });
-
-  try {
-    const { schedule } = await mta.schedule("G08");
-    if (!schedule || !Object.keys(schedule).length) {
-      res
-        .status(400)
-        .json({ error: `No schedule found, try different station` });
-      return;
-    }
-
-    res.json(schedule);
-  } catch (error) {
-    console.log(error);
-    // If we've erred here it's probably because of malformed MTA data. Retry here so that the FE doesn't spam us with requests.
-    res.status(503).json({ error });
-  }
-});
-
 app.use((_, res) => {
   res.status(404).json({ error: "Route doesn't exist." });
 });
