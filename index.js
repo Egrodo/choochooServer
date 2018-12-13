@@ -122,7 +122,7 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
   });
 
   try {
-    let useStopId;
+    let useStopId = stopId;
     if (stopId === "E08" || stopId === "F08" || stopId === "R08") {
       // Custom exception because the Forest Hills stop data is malformed.
       useStopId = "G08";
