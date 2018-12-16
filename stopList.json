@@ -1608,7 +1608,7 @@
     "parent_station": ""
   },
   {
-    "stop_id": ["635", "R20"],
+    "stop_id": ["635", "R20", "L03"],
     "stop_code": "",
     "stop_name": "14 St - Union Sq",
     "stop_desc": "",
@@ -3630,18 +3630,6 @@
     "stop_desc": "",
     "stop_lat": "40.737335",
     "stop_lon": "-73.996786",
-    "zone_id": "",
-    "stop_url": "",
-    "location_type": "1",
-    "parent_station": ""
-  },
-  {
-    "stop_id": ["L03"],
-    "stop_code": "",
-    "stop_name": "Union Sq - 14 St",
-    "stop_desc": "",
-    "stop_lat": "40.734789",
-    "stop_lon": "-73.99073",
     "zone_id": "",
     "stop_url": "",
     "location_type": "1",
