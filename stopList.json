@@ -216,9 +216,45 @@
     "parent_station": ""
   },
   {
-    "stop_id": ["121", "626", "A20", "N10", "Q04", "R44"],
+    "stop_id": ["121", "626", "A20"],
     "stop_code": "",
     "stop_name": "86 St",
+    "stop_desc": "",
+    "stop_lat": "40.788644",
+    "stop_lon": "-73.976218",
+    "zone_id": "",
+    "stop_url": "",
+    "location_type": "1",
+    "parent_station": ""
+  },
+  {
+    "stop_id": ["N10"],
+    "stop_code": "",
+    "stop_name": "86 St - N Train",
+    "stop_desc": "",
+    "stop_lat": "40.788644",
+    "stop_lon": "-73.976218",
+    "zone_id": "",
+    "stop_url": "",
+    "location_type": "1",
+    "parent_station": ""
+  },
+  {
+    "stop_id": ["Q04"],
+    "stop_code": "",
+    "stop_name": "86 St - Q Train",
+    "stop_desc": "",
+    "stop_lat": "40.788644",
+    "stop_lon": "-73.976218",
+    "zone_id": "",
+    "stop_url": "",
+    "location_type": "1",
+    "parent_station": ""
+  },
+  {
+    "stop_id": ["R44"],
+    "stop_code": "",
+    "stop_name": "86 St - R Train",
     "stop_desc": "",
     "stop_lat": "40.788644",
     "stop_lon": "-73.976218",
