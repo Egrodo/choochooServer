@@ -111,6 +111,11 @@ app.get("/api/schedule/:stopId/", async (req, res, next) => {
           res.json({ error: err });
           return;
         }
+        // If we reach here without having found a schedule, error.
+        res
+          .status(400)
+          .json({ error: `No schedule found, try different station` });
+        return;
       }
     })();
     return;
