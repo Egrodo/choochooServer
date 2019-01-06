@@ -1644,6 +1644,18 @@
     "parent_station": ""
   },
   {
+    "stop_id": ["716"],
+    "stop_code": "",
+    "stop_name": "33 St - Rawson Street",
+    "stop_desc": "",
+    "stop_lat": "40.744617",
+    "stop_lon": "-73.981306",
+    "zone_id": "",
+    "stop_url": "",
+    "location_type": "1",
+    "parent_station": ""
+  },
+  {
     "stop_id": ["635", "R20", "L03"],
     "stop_code": "",
     "stop_name": "14 St - Union Sq",
