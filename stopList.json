@@ -1848,9 +1848,21 @@
     "parent_station": ""
   },
   {
+    "stop_id": ["R05"],
+    "stop_code": "",
+    "stop_name": "46 St Station",
+    "stop_desc": "",
+    "stop_lat": "40.756878",
+    "stop_lon": "-73.913411",
+    "zone_id": "",
+    "stop_url": "",
+    "location_type": "1",
+    "parent_station": ""
+  },
+  {
     "stop_id": ["714", "G18"],
     "stop_code": "",
-    "stop_name": "46 St",
+    "stop_name": "46 - Bliss St",
     "stop_desc": "",
     "stop_lat": "40.743132",
     "stop_lon": "-73.918435",
@@ -3276,7 +3288,7 @@
     "parent_station": ""
   },
   {
-    "stop_id": ["G30", "R05"],
+    "stop_id": ["G30"],
     "stop_code": "",
     "stop_name": "Broadway",
     "stop_desc": "",
