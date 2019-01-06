@@ -2568,18 +2568,6 @@
     "parent_station": ""
   },
   {
-    "stop_id": ["D26"],
-    "stop_code": "",
-    "stop_name": "Prospect Park",
-    "stop_desc": "",
-    "stop_lat": "40.661614",
-    "stop_lon": "-73.962246",
-    "zone_id": "",
-    "stop_url": "",
-    "location_type": "1",
-    "parent_station": ""
-  },
-  {
     "stop_id": ["D27"],
     "stop_code": "",
     "stop_name": "Parkside Av",
