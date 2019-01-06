@@ -1874,7 +1874,7 @@
   {
     "stop_id": ["715"],
     "stop_code": "",
-    "stop_name": "40 St",
+    "stop_name": "40th St",
     "stop_desc": "",
     "stop_lat": "40.743781",
     "stop_lon": "-73.924016",
@@ -2066,7 +2066,7 @@
   {
     "stop_id": ["A32", "D20"],
     "stop_code": "",
-    "stop_name": "W 4 St",
+    "stop_name": "West 4th St",
     "stop_desc": "",
     "stop_lat": "40.732338",
     "stop_lon": "-74.000495",
